@@ -602,29 +602,29 @@ local DoritoLib = {}; do
 			local t3 = tweenService:Create(Status, tInfo, {TextTransparency = 0, Position = UDim2.new(0, 0, 0.593, 0)})
 			t1:Play()
 			t1.Completed:Wait()
-			task.wait(0.5)
+			task.wait()
 			t2:Play()
 			t3:Play()
-			task.wait(3)
+			task.wait()
 			createdLoading = true
 			Status.Text = "creating guis"
 			while not ui.Initalized do
-				task.wait(0.25)
+				task.wait()
 				Status.Text = Status.Text.."."
 				if #Status.Text > 16 then
 					Status.Text = "creating guis"
 				end
 			end
 			Status.Text = "done!"
-			task.wait(2)
+			task.wait()
 			local t4 = tweenService:Create(Background, tInfo, {Position = UDim2.new(0.5, 0, 1.25, 0)})
 			t4:Play()
 			t4.Completed:Wait()
 			Loading:Destroy()
-			task.wait(1)
+			task.wait()
 			ui:LoadingInit()
 		end)
-		repeat task.wait(1/30) until createdLoading
+		repeat task.wait() until createdLoading
 		local DoritoUILibrary = Instance.new("ScreenGui"); ui:WaitDelay()
 		local Main = Instance.new("Frame"); ui:WaitDelay()
 		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint"); ui:WaitDelay()
