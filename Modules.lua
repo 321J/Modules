@@ -1,11 +1,12 @@
-local Yon_Module = {}
+local ChineseFood_Module = {}
 
-function Yon_Module.GetBall()
-    for i, v in workspace:WaitForChild("Balls"):GetChildren() do
-        if v:IsA("BasePart") and v:GetAttribute("realBall") then
-            return v
+function ChineseFood_Module.GetBall()
+    for Index, Value in next, workspace.Balls:GetChildren() do
+        if Value:GetAttribute("realBall") then
+            return true
         end
     end
+    return false
 end
 
-return Yon_Module;
+return ChineseFood_Module;
